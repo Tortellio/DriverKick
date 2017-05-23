@@ -1,2 +1,2 @@
-# CarKickRevived
-Allows a player to kick another player from a vehicle
+# DriverKick
+Allows a player to kick the driver out of the vehicle
