@@ -1,0 +1,5 @@
+c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\bin\Debug\RocketMod-Plugin.dll
+c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\bin\Debug\RocketMod-Plugin.pdb
+c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\obj\Debug\DriverKick.csprojResolveAssemblyReference.cache
+c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\obj\Debug\RocketMod-Plugin.dll
+c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\obj\Debug\RocketMod-Plugin.pdb
