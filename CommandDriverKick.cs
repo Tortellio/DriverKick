@@ -65,24 +65,48 @@ namespace DriverKick
                     UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick_self"), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                     return;
                 }
-                if (otherplayer.IsInVehicle)
+                if(player.CurrentVehicle.lockedOwner == player.CSteamID)
                 {
-                    if (otherplayer.CurrentVehicle.isDriver)
+                    if (otherplayer.IsInVehicle)
                     {
-                        otherplayer.CurrentVehicle.kickPlayer(0);
-                        UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
-                        UnturnedChat.Say(otherplayer, Plugin.Instance.Translate("kicked", caller.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        if (otherplayer.CurrentVehicle.isDriver)
+                        {
+                            otherplayer.CurrentVehicle.kickPlayer(0);
+                            UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                            UnturnedChat.Say(otherplayer, Plugin.Instance.Translate("kicked", caller.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        }
+                        else
+                        {
+                            UnturnedChat.Say(caller, Plugin.Instance.Translate("not_driving", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        }
                     }
                     else
                     {
-                        UnturnedChat.Say(caller, Plugin.Instance.Translate("not_driving", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        UnturnedChat.Say(caller, Plugin.Instance.Translate("not_in_vehicle", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                     }
+                    return;
                 }
-                else
+                if(caller.HasPermission("driverkick.admin") || caller.IsAdmin)
                 {
-                    UnturnedChat.Say(caller, Plugin.Instance.Translate("not_in_vehicle", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                    if (otherplayer.IsInVehicle)
+                    {
+                        if (otherplayer.CurrentVehicle.isDriver)
+                        {
+                            otherplayer.CurrentVehicle.kickPlayer(0);
+                            UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                            UnturnedChat.Say(otherplayer, Plugin.Instance.Translate("kicked", caller.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        }
+                        else
+                        {
+                            UnturnedChat.Say(caller, Plugin.Instance.Translate("not_driving", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        }
+                    }
+                    else
+                    {
+                        UnturnedChat.Say(caller, Plugin.Instance.Translate("not_in_vehicle", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                    }
+                    return;
                 }
-                return;
             }
             if(command.Length == 0)
             {
