@@ -59,13 +59,13 @@ namespace DriverKick
                     UnturnedChat.Say(caller, Plugin.Instance.Translate("player_not_found"),UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                     return;
                 }
-                if(otherplayer.Id == caller.Id)
+                else if(otherplayer.Id == caller.Id)
                 {
                     player.CurrentVehicle.kickPlayer(0);
                     UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick_self"), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                     return;
                 }
-                if(player.CurrentVehicle.lockedOwner == player.CSteamID)
+                else if(player.CurrentVehicle.lockedOwner == player.CSteamID && player.HasPermission("myvehicle.driverkick"))
                 {
                     if (otherplayer.IsInVehicle)
                     {
@@ -117,6 +117,7 @@ namespace DriverKick
                     {
                         player.CurrentVehicle.kickPlayer(0);
                         UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick_self"), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                        return;
                     }
                     else
                     {
@@ -126,8 +127,8 @@ namespace DriverKick
                 else
                 {
                     UnturnedChat.Say(caller, Plugin.Instance.Translate("not_in_vehicle_self"), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
+                    return;
                 }
-                return;
             }
             else
             {
