@@ -2,3 +2,9 @@ c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\bin\R
 c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\bin\Release\RocketMod-Plugin.pdb
 c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\obj\Release\RocketMod-Plugin.dll
 c:\users\avery\documents\visual studio 2017\Projects\DriverKick\DriverKick\obj\Release\RocketMod-Plugin.pdb
+C:\Users\irfan\Documents\GitHub\DriverKick\obj\Release\DriverKick.csprojAssemblyReference.cache
+C:\Users\irfan\Documents\GitHub\DriverKick\obj\Release\DriverKick.csproj.CoreCompileInputs.cache
+C:\Users\irfan\Documents\GitHub\DriverKick\obj\Release\RocketMod-Plugin.dll
+C:\Users\irfan\Documents\GitHub\DriverKick\obj\Release\RocketMod-Plugin.pdb
+C:\Users\irfan\Documents\GitHub\DriverKick\bin\Release\RocketMod-Plugin.dll
+C:\Users\irfan\Documents\GitHub\DriverKick\bin\Release\RocketMod-Plugin.pdb

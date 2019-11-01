@@ -61,7 +61,7 @@ namespace DriverKick
                 }
                 else if(otherplayer.Id == caller.Id)
                 {
-                    player.CurrentVehicle.kickPlayer(0);
+                    player.CurrentVehicle.tryRemovePlayer(out _, player.CSteamID, out _, out _);
                     UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick_self"), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                     return;
                 }
@@ -71,7 +71,7 @@ namespace DriverKick
                     {
                         if (otherplayer.CurrentVehicle.isDriver)
                         {
-                            otherplayer.CurrentVehicle.kickPlayer(0);
+                            otherplayer.CurrentVehicle.tryRemovePlayer(out _, player.CSteamID, out _, out _);
                             UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                             UnturnedChat.Say(otherplayer, Plugin.Instance.Translate("kicked", caller.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                         }
@@ -92,7 +92,7 @@ namespace DriverKick
                     {
                         if (otherplayer.CurrentVehicle.isDriver)
                         {
-                            otherplayer.CurrentVehicle.kickPlayer(0);
+                            otherplayer.CurrentVehicle.tryRemovePlayer(out _, player.CSteamID, out _, out _);
                             UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick", otherplayer.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                             UnturnedChat.Say(otherplayer, Plugin.Instance.Translate("kicked", caller.DisplayName), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                         }
@@ -115,7 +115,7 @@ namespace DriverKick
                 {
                     if (player.CurrentVehicle.isDriver)
                     {
-                        player.CurrentVehicle.kickPlayer(0);
+                        player.CurrentVehicle.tryRemovePlayer(out _, player.CSteamID, out _, out _);
                         UnturnedChat.Say(caller, Plugin.Instance.Translate("driverkick_self"), UnturnedChat.GetColorFromName(Plugin.Instance.Configuration.Instance.MessageColor, Color.red));
                         return;
                     }
